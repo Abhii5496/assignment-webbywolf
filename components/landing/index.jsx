@@ -33,7 +33,7 @@ export default function Landing() {
       <Quote />
       <Download />
       <Section7 />
-      <CarouselSection />
+      {/* <CarouselSection /> */}
       <Section9 />
       <Section10 />
       <Section11 />

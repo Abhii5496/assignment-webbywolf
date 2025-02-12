@@ -16,31 +16,78 @@ import { Input } from "../ui/input";
 import Image from "next/image";
 import { Textarea } from "../ui/textarea";
 import Link from "next/link";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { motion } from "motion/react";
+import { toast } from "sonner";
 
 const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
+  name: z.string().min(4, {
+    message: "Please enter name.",
   }),
+  email: z
+    .string({
+      required_error: "Please enter an email.",
+    })
+    .email(),
+  phone: z
+    .string()
+    .min(10, {
+      message: "Please enter correct phone number.",
+    })
+    .max(10)
+    .max(10),
+
+  size: z.string().min(1, { message: "Please select time frame." }),
+  quantity: z.string().min(1, { message: "Please select time frame." }),
+  time: z.string().min(1, { message: "Please select time frame." }),
+  description: z
+    .string()
+    .min(25, {
+      message: "Please describe your project atleast in 25 characters .",
+    })
+    .max(255, {
+      message: "Please describe your project in 255 characters .",
+    }),
 });
 export default function Quote() {
   const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      username: "",
+      name: "",
+      email: "",
+      phone: "",
+      time: "",
+      size: "",
+      quantity: "",
+      description: "",
     },
   });
 
   function onSubmit(values) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
     console.log(values);
+    toast.success("Form submitted succesfully.", {
+      description: "We'll connect you through your email, Thank you.",
+    });
+    form.reset();
   }
   return (
     <div className="flex justify-center items-center  py-10 sm:py-20 relative">
-      <div className="w-full sm:max-w-5xl px-10 sm:px-20 py-10 rounded-3xl bg-muted">
-        <h1 className="text-4xl uppercase text-center font-bold pb-10">
+      <div className="w-full sm:max-w-5xl px-10 sm:px-16 py-10 rounded-3xl bg-muted">
+        <motion.h1
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3, delay: 0.3 }}
+          className="text-2xl sm:text-4xl uppercase text-center font-bold pb-10"
+        >
           request a quote
-        </h1>
+        </motion.h1>
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(onSubmit)}
@@ -81,7 +128,7 @@ export default function Quote() {
                 <FormItem className="space-y-0 w-full sm:w-[300px] col-span-2 sm:col-span-1">
                   <FormLabel className="">Phone Number</FormLabel>
                   <FormControl className="">
-                    <Input placeholder="Abhii" {...field} />
+                    <Input placeholder="918009090" {...field} type="number" />
                   </FormControl>
 
                   <FormMessage />
@@ -93,10 +140,24 @@ export default function Quote() {
               name="time"
               render={({ field }) => (
                 <FormItem className="space-y-0 w-full sm:w-[300px] col-span-2 sm:col-span-1">
-                  <FormLabel className="">Time Frame</FormLabel>
-                  <FormControl className="">
-                    <Input placeholder="Abhii" {...field} />
-                  </FormControl>
+                  <FormLabel className="">
+                    Time Frame <span className="text-destructive">*</span>
+                  </FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl className="">
+                      <SelectTrigger className="">
+                        <SelectValue placeholder="Choose Time Frame" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="1">10:00 AM - 11:00 AM</SelectItem>
+                      <SelectItem value="2">12:00 AM - 1:00 PM</SelectItem>
+                      <SelectItem value="3">1:00 PM - 2:00 PM</SelectItem>
+                    </SelectContent>
+                  </Select>
 
                   <FormMessage />
                 </FormItem>
@@ -107,10 +168,25 @@ export default function Quote() {
               name="size"
               render={({ field }) => (
                 <FormItem className="space-y-0 w-full sm:w-[300px] col-span-2 sm:col-span-1">
-                  <FormLabel className="">Size</FormLabel>
-                  <FormControl className="">
-                    <Input placeholder="Abhii" {...field} />
-                  </FormControl>
+                  <FormLabel className="">
+                    Size<span className="text-destructive">*</span>
+                  </FormLabel>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl className="">
+                      <SelectTrigger className="">
+                        <SelectValue placeholder="Choose Size" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="1">Small</SelectItem>
+                      <SelectItem value="2">Medium</SelectItem>
+                      <SelectItem value="3">Large</SelectItem>
+                      <SelectItem value="4">Extra Large</SelectItem>
+                    </SelectContent>
+                  </Select>
 
                   <FormMessage />
                 </FormItem>
@@ -121,12 +197,25 @@ export default function Quote() {
               name="quantity"
               render={({ field }) => (
                 <FormItem className="space-y-0 w-full sm:w-[300px] col-span-2 sm:col-span-1">
-                  <FormLabel className="" required>
-                    Quantity
+                  <FormLabel className="">
+                    Quantity<span className="text-destructive">*</span>
                   </FormLabel>
-                  <FormControl className="">
-                    <Input placeholder="Abhii" {...field} required />
-                  </FormControl>
+                  <Select
+                    onValueChange={field.onChange}
+                    defaultValue={field.value}
+                  >
+                    <FormControl className="">
+                      <SelectTrigger className="">
+                        <SelectValue placeholder="Choose Size" />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      <SelectItem value="1">1-5</SelectItem>
+                      <SelectItem value="2">6-10</SelectItem>
+                      <SelectItem value="3">11-15</SelectItem>
+                      <SelectItem value="4">16-20</SelectItem>
+                    </SelectContent>
+                  </Select>
 
                   <FormMessage />
                 </FormItem>
@@ -134,7 +223,7 @@ export default function Quote() {
             />
             <FormField
               control={form.control}
-              name="name"
+              name="description"
               render={({ field }) => (
                 <FormItem className="space-y-0 w-full sm:w-[750px] col-span-2">
                   <FormLabel className="">
@@ -142,9 +231,8 @@ export default function Quote() {
                   </FormLabel>
                   <FormControl className="">
                     <Textarea
-                      required
                       placeholder="Describe your project."
-                      className="resize-none "
+                      className="resize-none min-h-40 "
                       {...field}
                     />
                   </FormControl>

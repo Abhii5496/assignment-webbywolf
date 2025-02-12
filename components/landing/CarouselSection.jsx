@@ -38,14 +38,20 @@ export default function CarouselSection() {
   console.log(current);
   return (
     <div className="overflow-hidden">
-      <div className="bg-button-secondary ">
+      <div className="bg-button-secondary">
         <div className="flex sm:justify-between flex-col sm:flex-row items-start sm:items-center text-background p-5 pt-10 pb-0 lg:pb-0 lg:p-20">
           <div className="space-y-3">
-            <p className="font-semibold">Join other Sun harvesters</p>
-            <h2 className="uppercase font-bold text-3xl">
+            <FadeIn as="p" className="font-semibold text-background ">
+              Join other Sun harvesters
+            </FadeIn>
+            <FadeIn
+              as="h2"
+              delay={0.3}
+              className="uppercase font-bold text-3xl"
+            >
               Lorem ipsum dolor sit amet
-            </h2>
-            <p className="w-full lg:w-2/4">
+            </FadeIn>
+            <p className="w-full lg:w-2/4 text-background ">
               Dui euismod iaculis libero, aliquet vitae et elementum porttitor.
               Eleifend mi tristique condimentum congue fusce nunc, donec magnis
               commodo.

@@ -31,16 +31,17 @@ export default function Hero() {
                 clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
               },
             }}
-            transition={{ duration: 1.2, delay: 1 }}
+            transition={{ duration: 1.4, delay: 1 }}
             key="loader-home"
             className="fixed inset-0 z-[999] flex flex-col pointer-events-none origin-top bg-button-primary justify-center items-center"
           >
             <motion.h2
               variants={{
                 initial: { y: 40, opacity: 0 },
-                animate: { y: 0, opacity: 1, transition: { duration: 0.3 } },
-                exit: { y: -40, opacity: 0, transition: { duration: 0.3 } },
+                animate: { y: 0, opacity: 1 },
+                exit: { y: -40, opacity: 0 },
               }}
+              transition={{ duration: 0.3 }}
               className="text-xl text-background sm:text-4xl lg:text-7xl font-bold"
             >
               WELCOME.

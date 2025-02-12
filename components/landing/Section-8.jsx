@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 export default function Section8() {
   return (
     <div className="relative z-10 py-20">
-      <div className="flex bg-[#F8F8F8] flex-col sm:flex-row sm:gap-10 h-full p-5 ">
+      <div className="flex bg-[#F8F8F8] flex-col sm:flex-row sm:gap-10 h-full p-5 relative ">
         <div className="w-full sm:w-1/2 h-full">
           <div className="relative h-80">
             <motion.img
@@ -39,6 +39,7 @@ export default function Section8() {
             </div>
           </div>
         </div>
+        <div className="h-2 lg:h-3 absolute w-full lg:w-[90%] bg-gradient-to-r bottom-0 left-0 from-[#043898] via-[#079902] to-[#170041]" />
       </div>
     </div>
   );

@@ -4,14 +4,15 @@ import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
 import { FadeIn, Reveal } from "../ui/Animations";
 import Section8 from "./Section-8";
+import CarouselSection from "./CarouselSection";
 
 export default function Section7() {
   return (
     <div>
-      <div className="relative h-[1400px] ">
+      <div className="relative ">
         <Image
           src="/landing/lines-2.svg"
-          className="w-full h-full absolute object-cover z-0"
+          className="w-full h-[1400px] absolute object-cover z-0 pointer-events-none"
           alt="img"
           fill
         />
@@ -19,7 +20,7 @@ export default function Section7() {
           <div className="grid grid-cols-2 gap-2 h-full ">
             <div className="col-span-2 lg:col-span-1 h-full">
               <div className="grid grid-cols-6 grid-rows-5 lg:grid-rows-6 gap-4 h-full">
-                <div className="border-border border-white col-span-5 row-span-3 space-y-3 ">
+                <div className="border-border border-white col-span-5 row-span-3 space-y-3  ">
                   <FadeIn as="h6" className="uppercase font-semibold">
                     No Limit
                   </FadeIn>
@@ -131,6 +132,7 @@ export default function Section7() {
           </div>
         </div>
         <Section8 />
+        <CarouselSection />
       </div>
     </div>
   );

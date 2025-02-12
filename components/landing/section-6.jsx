@@ -83,7 +83,7 @@ const CardItem = ({ img, title, desc, i }) => {
       whileHover={{ y: -5, scale: 1.02, transition: { duration: 0.3 } }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: 0.2 * i }}
-      className="w-[380px] sm:w-[300px] lg:w-[445px] cursor-pointer"
+      className="w-full sm:w-[300px] lg:w-[445px] cursor-pointer"
     >
       <Card className="w-full  overflow-hidden border-0 transition-all duration-300 hover:border border-button-secondary/50">
         <CardHeader className="h-40 w-full relative">

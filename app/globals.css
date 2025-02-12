@@ -71,6 +71,14 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  h1 {
+    @apply font-roboto sm:text-[42px];
+  }
+  p,
+  h6,
+  h5 {
+    @apply text-[#222222] font-inter;
+  }
 }
 
 html.lenis,

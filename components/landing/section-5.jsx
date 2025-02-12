@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
+import { FadeIn } from "../ui/Animations";
+import { animate } from "motion";
 const imgs = [
   "https://s3-alpha-sig.figma.com/img/f30a/20c7/93164c02e92df15ac3e046102e4de474?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=GlZ9nyWkd6AQTmWymPdtUul5Y6LOo4-coxjq9zZIPpxHl3vZk08WIlUE6LCzP3ax1RDbU9PMbrS3hdRBGmNDePr8eqMolRalAiUpI-iU~HQUpFiC9jFlexS7yRH0MHbuiEEWjAFHiQMRZyd0HWli6W1dlh8sVYh9tUVP6YZkKxNDwKj-tNaQ-AfGJRfC1Aa3zBJnJlpf7TWrzNAyGy5NZfk~0IVcrWsqnTQNvgXm6idFQzOpAYxezuhe45NKJA~bnEdH~-YLe2LDFHx7NoV1s~alBg5KM6Dyf2k9ZaMbRPNXTw6LPjzve1Ny88T~v05TUQOrJJdqS4vVlRT786GD8A__",
   "https://s3-alpha-sig.figma.com/img/36e2/135d/88c8ac0d9f239bc8f2954062c5a5bec9?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=Jqi6HccBFPeC6oppy9rR8QcIDkRMz0Y8NqTRHW2QHFVGHJKB45bWh5~9hV2mn62j-EC-k10Zh-7ry8OV~wWgTcJCsEVDRJq498rokEnt~VLXZbo5c7ju2HWXZcZt4-9ree0NRSUlKT44jxNh8ClwunlModz-qMVBmHzfoKAqRfrmGM7jm86Ywqb2saHam5b2UyF-t0FXCUrBbmkf4aBpKwvPlyUrlgigRATANs-KEEiEIaxTJAv~vUi0NAUXCPd4Rt4iojo7Ks3onRO93JIHpN0Dq7wt6l7Nc8MKv56ijgLGMtKxEFqLPQMk2PvNnhBv8f1LHY~JpCUNHFD2XAuiwQ__",
@@ -20,12 +22,21 @@ export default function Section5({ className }) {
   return (
     <div className={cn("py-20", className)}>
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-2xl sm:text-4xl uppercase text-center font-bold pb-10">
+        <FadeIn
+          as="h1"
+          className="text-2xl sm:text-4xl uppercase text-center font-bold pb-10"
+        >
           Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </h1>
-        <div className="flex flex-wrap gap-4 lg:gap-y-3 lg:gap-x-0 justify-center ">
+        </FadeIn>
+        <motion.div
+          initial="initial"
+          whileInView="animate"
+          viewport={{ once: true }}
+          transition={{ staggerChildren: 1 }}
+          className="flex flex-wrap gap-4 lg:gap-y-3 lg:gap-x-0 justify-center "
+        >
           {imgs.map((img, i) => (
-            <div
+            <motion.div
               key={i}
               className="w-1/4 flex justify-center"
               style={{
@@ -33,13 +44,18 @@ export default function Section5({ className }) {
               }}
             >
               <motion.img
+                variants={{
+                  initial: { y: 40, opacity: 0 },
+                  animate: { y: 0, opacity: 1 },
+                }}
+                transition={{ duration: 0.2, delay: i * 0.1 }}
                 src={img}
                 className="h-16 w-1h-16 sm:h-24 sm:w-24 object-contain "
                 key={i}
               />
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

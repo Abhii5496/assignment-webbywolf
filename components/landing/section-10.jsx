@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function Section10() {
   return (
-    <div className="p-5 lg:p-20 relative flex flex-col gap-5 bg-[#F1F1F1] mt-40">
+    <div className="p-5 lg:p-20 relative flex flex-col gap-5 bg-[#F1F1F1] mt-40 ">
       <div className="flex flex-col-reverse sm:flex-row gap-5">
         <div className="space-y-4 w-full sm:w-1/2 -mt-20 sm:mt-0">
           <FadeIn
@@ -46,7 +46,7 @@ export default function Section10() {
       </div>
       <FadeIn
         as="div"
-        className="relative lg:absolute lg:left-20  left-0 lg:-bottom-1/2 space-y-4 lg:p-10 p-5 shadow-lg lg:w-1/3 w-full bg-background"
+        className="relative lg:absolute z-10 lg:left-20  left-0 lg:-bottom-1/2 space-y-4 lg:p-10 p-5 shadow-lg lg:w-1/3 w-full bg-background"
       >
         <h6 className="font-bold">Lorem ipsum dolor sit.</h6>
         <p className="text-gray-500">
@@ -64,6 +64,7 @@ export default function Section10() {
           commodo.{" "}
         </p>
       </FadeIn>
+      <div className="h-2 lg:h-3 absolute w-full lg:w-[90%] z-0 bg-gradient-to-r bottom-0 left-0 from-[#043898] via-[#079902] to-[#170041]" />
     </div>
   );
 }

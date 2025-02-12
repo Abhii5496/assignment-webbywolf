@@ -1,6 +1,7 @@
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
+import { FadeIn } from "../ui/Animations";
 
 export default function BeforeQuote({ className }) {
   return (
@@ -14,12 +15,18 @@ export default function BeforeQuote({ className }) {
           alt="img4"
         />
         <div className="h-full w-full p-5 sm:p-10 relative z-20 ">
-          <p className="text-4xl font-bold bg-background w-fit p-1">LOGO</p>
+          <FadeIn as="p" className="text-4xl font-bold bg-background w-fit p-1">
+            LOGO
+          </FadeIn>
           <div className="flex justify-center items-center h-full w-full text-background">
-            <h1 className="sm:text-4xl text-2xl font-bold uppercase text-center lg:px-20">
+            <FadeIn
+              as="h1"
+              delay={0.3}
+              className="sm:text-4xl text-2xl font-bold uppercase text-center lg:px-20"
+            >
               dolor sit amet consectetur. Quis adipiscing purus egestas aliquam
               viverra mi. dolor sit amet consectetur. Quis adipiscing
-            </h1>
+            </FadeIn>
           </div>
         </div>
       </div>
