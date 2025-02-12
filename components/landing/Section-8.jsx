@@ -39,7 +39,7 @@ export default function Section8() {
             </div>
           </div>
         </div>
-        <div className="h-2 lg:h-3 absolute w-full lg:w-[90%] bg-gradient-to-r bottom-0 left-0 from-[#043898] via-[#079902] to-[#170041]" />
+        <div className="h-2 lg:h-3 absolute w-[90%] bg-gradient-to-r bottom-0 left-0 from-[#043898] via-[#079902] to-[#170041]" />
       </div>
     </div>
   );

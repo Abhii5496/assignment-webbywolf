@@ -7,8 +7,8 @@ import { FadeIn } from "../ui/Animations";
 
 export default function Section2() {
   return (
-    <section className="p-5 sm:p-10 relative">
-      <div className="flex flex-col-reverse sm:flex-row gap-8  lg:p-20 lg:shadow-lg  ">
+    <section className="p-5 sm:p-10 ">
+      <div className="flex flex-col-reverse sm:flex-row gap-8  lg:p-20 lg:shadow-lg relative ">
         <div className="flex w-full sm:w-1/2 justify-center flex-col">
           <div className="space-y-4 pb-4">
             <FadeIn as="p" className="text-button-secondary">
@@ -98,8 +98,8 @@ export default function Section2() {
             alt="img-2"
           />
         </FadeIn>
+        <div className="h-2 lg:h-3 w-[90%] bg-gradient-to-r -bottom-4 absolute lg:bottom-0 left-0 from-[#043898] via-[#079902] to-[#170041]" />
       </div>
-      <div className="h-2 lg:h-3 w-full lg:w-[90%] bg-gradient-to-r bottom-2 absolute lg:bottom-0 left-0 from-[#043898] via-[#079902] to-[#170041]" />
     </section>
   );
 }
