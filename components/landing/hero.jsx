@@ -76,6 +76,7 @@ export default function Hero() {
                 initial={{ y: 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.3, delay: 1.8 }}
+                className="text-white"
               >
                 Lorem ipsum dolor sit amet consectetur. Enim netus cras congue
                 quis elit sociis. Sed mi rhoncus id habitant. In urna tellus
@@ -110,7 +111,7 @@ export default function Hero() {
                 <span className="rounded-full h-[30px] w-[30px] p-2 inline-flex justify-center items-center mr-3 bg-button-secondary">
                   <Check className="text-background stroke-[4px]" size={28} />
                 </span>
-                <p>No credit card required!</p>
+                <p className="text-white">No credit card required!</p>
               </motion.div>
             </div>
           </div>
