@@ -9,6 +9,7 @@ import {
 } from "motion/react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
+import { AnimatedButton } from "../ui/Animations";
 // import { AnimatedButton } from "../ui/Animations";
 
 const menuVars = {
@@ -102,23 +103,23 @@ export default function Header() {
           <div className="text-xl font-bold mix-blend-multiply">LOGO</div>
           <div className="hidden sm:block">
             <nav className="flex space-x-6 text-sm">
-              {/* <AnimatedButton className="w-fit hover:text-background p-1"> */}
-              <Link href="#" className="">
-                Lorem Ipsum
-              </Link>
-              {/* </AnimatedButton> */}
+              <AnimatedButton className="w-fit hover:text-background p-1">
+                <Link href="#" className="">
+                  Lorem Ipsum
+                </Link>
+              </AnimatedButton>
 
-              {/* <AnimatedButton className="w-fit hover:text-background p-1"> */}
-              <Link href="#" className="">
-                Lorem Ipsum
-              </Link>
-              {/* </AnimatedButton> */}
+              <AnimatedButton className="w-fit hover:text-background p-1">
+                <Link href="#" className="">
+                  Lorem Ipsum
+                </Link>
+              </AnimatedButton>
 
-              {/* <AnimatedButton className="w-fit hover:text-background p-1"> */}
-              <Link href="#" className="">
-                Lorem Ipsum
-              </Link>
-              {/* </AnimatedButton> */}
+              <AnimatedButton className="w-fit hover:text-background p-1">
+                <Link href="#" className="">
+                  Lorem Ipsum
+                </Link>
+              </AnimatedButton>
             </nav>
           </div>
           <div className="flex gap-2">

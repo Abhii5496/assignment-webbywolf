@@ -50,7 +50,7 @@ export const AnimatedButton = ({ children, className, ...props }) => {
   return (
     <motion.div
       className={cn(
-        "relative overflow-hidden cursor-pointer w-full h-fit",
+        "relative overflow-hidden cursor-pointer w-full h-full",
         className
       )}
       initial="initial"
