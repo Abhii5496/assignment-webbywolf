@@ -103,19 +103,19 @@ export default function Header() {
           <div className="text-xl font-bold mix-blend-multiply">LOGO</div>
           <div className="hidden sm:block">
             <nav className="flex space-x-6 text-sm">
-              <AnimatedButton className="w-fit hover:text-background p-1">
+              <AnimatedButton className="w-fit hover:text-background p-1 rounded-lg">
                 <Link href="#" className="">
                   Lorem Ipsum
                 </Link>
               </AnimatedButton>
 
-              <AnimatedButton className="w-fit hover:text-background p-1">
+              <AnimatedButton className="w-fit hover:text-background p-1 rounded-lg">
                 <Link href="#" className="">
                   Lorem Ipsum
                 </Link>
               </AnimatedButton>
 
-              <AnimatedButton className="w-fit hover:text-background p-1">
+              <AnimatedButton className="w-fit hover:text-background p-1 rounded-lg">
                 <Link href="#" className="">
                   Lorem Ipsum
                 </Link>
