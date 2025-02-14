@@ -9,7 +9,7 @@ import {
 } from "motion/react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import { AnimatedButton } from "../ui/Animations";
+// import { AnimatedButton } from "../ui/Animations";
 
 const menuVars = {
   initial: {
@@ -102,23 +102,23 @@ export default function Header() {
           <div className="text-xl font-bold mix-blend-multiply">LOGO</div>
           <div className="hidden sm:block">
             <nav className="flex space-x-6 text-sm">
-              <AnimatedButton className="w-fit hover:text-background p-1">
-                <Link href="#" className="">
-                  Lorem Ipsum
-                </Link>
-              </AnimatedButton>
+              {/* <AnimatedButton className="w-fit hover:text-background p-1"> */}
+              <Link href="#" className="">
+                Lorem Ipsum
+              </Link>
+              {/* </AnimatedButton> */}
 
-              <AnimatedButton className="w-fit hover:text-background p-1">
-                <Link href="#" className="">
-                  Lorem Ipsum
-                </Link>
-              </AnimatedButton>
+              {/* <AnimatedButton className="w-fit hover:text-background p-1"> */}
+              <Link href="#" className="">
+                Lorem Ipsum
+              </Link>
+              {/* </AnimatedButton> */}
 
-              <AnimatedButton className="w-fit hover:text-background p-1">
-                <Link href="#" className="">
-                  Lorem Ipsum
-                </Link>
-              </AnimatedButton>
+              {/* <AnimatedButton className="w-fit hover:text-background p-1"> */}
+              <Link href="#" className="">
+                Lorem Ipsum
+              </Link>
+              {/* </AnimatedButton> */}
             </nav>
           </div>
           <div className="flex gap-2">
@@ -141,7 +141,7 @@ export default function Header() {
             animate="animate"
             exit="exit"
             id="sideMenu"
-            className="fixed sm:hidden top-0 left-0 w-full origin-top h-screen z-50 bg-background  p-4 "
+            className="fixed sm:hidden top-0 left-0 w-full origin-top h-screen sm:h-0 z-50 bg-background  p-4 "
           >
             <motion.nav
               variants={containerVars}
@@ -188,7 +188,7 @@ export default function Header() {
                 transition={{ duration: 0.5 }}
                 whileTap={{ scale: 1.2 }}
                 exit={{ y: 100, opacity: 0 }}
-                className="w-full bg-button-primary absolute bottom-10 left-0 text-background text-xl font-medium py-1 rounded-xl "
+                className="w-full bg-button-primary absolute bottom-16 left-0 text-background text-xl font-medium py-1 rounded-xl "
               >
                 Close
               </motion.button>
