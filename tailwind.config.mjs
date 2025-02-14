@@ -53,8 +53,8 @@ export default {
           4: "hsl(var(--chart-4))",
           5: "hsl(var(--chart-5))",
         },
-        "button-primary": "var(--button-primary)",
-        "button-secondary": "var(--button-secondary)",
+        "button-primary": "hsl(var(--button-primary))",
+        "button-secondary": "hsl(var(--button-secondary))",
       },
       borderRadius: {
         lg: "var(--radius)",
