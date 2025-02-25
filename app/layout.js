@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono, Inter, Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
+import { AOSInit } from "@/components/ui/aos";
 
 const robotoCondensed = Roboto_Condensed({
   variable: "--font-roboto",
@@ -20,6 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <AOSInit />
       <body
         className={`${robotoCondensed.variable} ${inter.variable} antialiased`}
       >
